@@ -1,0 +1,825 @@
+:root {
+  --bg: #141310;
+  --line: rgba(255, 248, 238, 0.16);
+  --text: #f6efe7;
+  --accent: #d6ae7b;
+  --accent-strong: #e9c89e;
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-sm: 999px;
+  --max-width: 1240px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(214, 174, 123, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 22%),
+    linear-gradient(135deg, #11100d 0%, #171612 45%, #100f0d 100%);
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 30;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--text);
+  color: #141310;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.page-shell {
+  position: relative;
+  overflow: clip;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 90% 10%, rgba(214, 174, 123, 0.1), transparent 24%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  mix-blend-mode: soft-light;
+}
+
+.site-header,
+.hero,
+.analysis-panel,
+.services-section,
+.wedding-sites-section,
+.timeline-section,
+.testimonials-section,
+.contact-section {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0 18px;
+  backdrop-filter: blur(18px);
+}
+
+.brand-lockup,
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-actions {
+  gap: 22px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(91, 91, 86, 0.62);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-name,
+.brand-meta,
+.eyebrow,
+.section-label,
+.service-accent,
+.timeline-step,
+.preview-panel p,
+.metric-ribbon span {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.brand-name,
+.brand-meta {
+  margin: 0;
+}
+
+.brand-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.brand-meta {
+  margin-top: 4px;
+  color: rgba(246, 239, 231, 0.68);
+  font-size: 0.68rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 22px;
+  font-size: 0.92rem;
+  color: rgba(246, 239, 231, 0.84);
+}
+
+.site-nav a,
+.locale-button {
+  position: relative;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms var(--ease);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.locale-switch {
+  display: inline-flex;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 248, 238, 0.05);
+}
+
+.locale-button {
+  min-width: 50px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(246, 239, 231, 0.82);
+  cursor: pointer;
+  transition: background-color 220ms var(--ease), color 220ms var(--ease), transform 220ms var(--ease);
+}
+
+.locale-button.is-active {
+  background: linear-gradient(135deg, var(--accent-strong), #c89d69);
+  color: #191611;
+  font-weight: 800;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 44px;
+  padding: 52px 0 40px;
+  align-items: center;
+}
+
+.hero-copy h1,
+.analysis-grid h2,
+.section-heading h2,
+.wedding-sites-copy h2,
+.contact-copy h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(3.8rem, 8vw, 7.2rem);
+  max-width: 10ch;
+}
+
+.hero-description,
+.analysis-grid p,
+.service-card p,
+.wedding-sites-copy p,
+.timeline-item p,
+.testimonial-card p,
+.contact-copy p,
+.contact-note p {
+  color: rgba(246, 239, 231, 0.78);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.hero-description {
+  max-width: 60ch;
+  margin: 24px 0 0;
+  font-size: 1.08rem;
+}
+
+.badge-row,
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge-row {
+  margin-top: 26px;
+}
+
+.badge-chip,
+.ghost-button,
+.primary-button,
+.feature-list span {
+  border-radius: var(--radius-sm);
+}
+
+.badge-chip {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 248, 238, 0.04);
+  font-size: 0.82rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primary-button,
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 220ms var(--ease),
+    border-color 220ms var(--ease),
+    background-color 220ms var(--ease),
+    box-shadow 220ms var(--ease);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent-strong), #c89d69);
+  color: #191611;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(201, 153, 96, 0.26);
+}
+
+.ghost-button {
+  border-color: var(--line);
+  background: rgba(255, 248, 238, 0.04);
+}
+
+.primary-button:hover,
+.ghost-button:hover,
+.primary-button:focus-visible,
+.ghost-button:focus-visible,
+.locale-button:hover,
+.locale-button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.metric-ribbon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 248, 238, 0.05);
+  box-shadow: var(--shadow);
+}
+
+.metric-ribbon strong {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+
+.metric-ribbon span {
+  display: block;
+  color: rgba(246, 239, 231, 0.68);
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 760px;
+}
+
+.floating-card {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(255, 248, 238, 0.12);
+  border-radius: 30px;
+  background: rgba(255, 248, 238, 0.06);
+  box-shadow: var(--shadow);
+}
+
+.portrait-card {
+  top: 40px;
+  right: 0;
+  width: min(100%, 470px);
+}
+
+.portrait-card img {
+  aspect-ratio: 0.72;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 16px;
+  border: 1px solid rgba(255, 248, 238, 0.16);
+  border-radius: 22px;
+  backdrop-filter: blur(16px);
+  background: rgba(20, 19, 16, 0.46);
+}
+
+.card-overlay p,
+.card-overlay strong {
+  margin: 0;
+}
+
+.card-overlay p {
+  color: rgba(246, 239, 231, 0.66);
+  font-size: 0.82rem;
+}
+
+.card-overlay strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.logo-card {
+  left: 0;
+  top: 0;
+  width: 230px;
+  transform: rotate(-8deg);
+}
+
+.profile-card {
+  left: 32px;
+  bottom: 0;
+  width: 240px;
+  transform: rotate(7deg);
+}
+
+.analysis-panel,
+.services-section,
+.wedding-sites-section,
+.timeline-section,
+.testimonials-section,
+.contact-section {
+  padding: 92px 0 0;
+}
+
+.analysis-panel {
+  padding-top: 40px;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 248, 238, 0.07), rgba(255, 248, 238, 0.03)),
+    rgba(255, 248, 238, 0.04);
+}
+
+.analysis-grid h2,
+.section-heading h2,
+.wedding-sites-copy h2,
+.contact-copy h2 {
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 4.7rem);
+}
+
+.analysis-points {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.analysis-points li {
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 248, 238, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 248, 238, 0.04);
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.services-grid,
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.service-card,
+.testimonial-card,
+.contact-form-shell {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 248, 238, 0.05);
+  box-shadow: var(--shadow);
+}
+
+.service-card {
+  min-height: 260px;
+  padding: 28px;
+}
+
+.service-accent {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.service-card h3,
+.timeline-item h3 {
+  margin: 18px 0 12px;
+  font-size: 1.5rem;
+}
+
+.wedding-sites-section {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.feature-list {
+  margin-top: 28px;
+}
+
+.feature-list span {
+  padding: 12px 16px;
+  background: rgba(255, 248, 238, 0.07);
+  border: 1px solid var(--line);
+}
+
+.wedding-sites-preview {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(91, 91, 86, 0.32), rgba(20, 19, 16, 0.82));
+  box-shadow: var(--shadow);
+}
+
+.browser-chrome {
+  display: flex;
+  gap: 8px;
+}
+
+.browser-chrome span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 248, 238, 0.22);
+}
+
+.preview-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.preview-panel {
+  min-height: 140px;
+  padding: 20px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(214, 174, 123, 0.22), transparent 34%),
+    rgba(255, 248, 238, 0.06);
+  border: 1px solid rgba(255, 248, 238, 0.11);
+}
+
+.preview-panel.primary,
+.preview-panel.wide {
+  grid-column: span 2;
+}
+
+.preview-panel.primary {
+  min-height: 210px;
+}
+
+.preview-panel strong {
+  display: block;
+  max-width: 12ch;
+  margin-top: 16px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  line-height: 0.98;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 20px;
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 248, 238, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 248, 238, 0.04);
+}
+
+.timeline-step {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.timeline-item h3,
+.timeline-item p {
+  margin: 0;
+}
+
+.timeline-item p {
+  margin-top: 8px;
+}
+
+.testimonial-card {
+  margin: 0;
+  padding: 28px;
+}
+
+.testimonial-card footer {
+  margin-top: 18px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 30px;
+  padding-bottom: 80px;
+}
+
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.contact-meta a {
+  width: fit-content;
+  color: var(--accent-strong);
+}
+
+.contact-form-shell {
+  padding: 24px;
+}
+
+.contact-note {
+  margin-bottom: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 248, 238, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 248, 238, 0.04);
+}
+
+.contact-note strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-note p {
+  margin: 0;
+}
+
+.inquiry-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.inquiry-form label {
+  display: grid;
+  gap: 8px;
+  color: rgba(246, 239, 231, 0.76);
+  font-size: 0.92rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.inquiry-form input,
+.inquiry-form textarea,
+.inquiry-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 248, 238, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 248, 238, 0.05);
+  color: var(--text);
+}
+
+.inquiry-form input::placeholder,
+.inquiry-form textarea::placeholder {
+  color: rgba(246, 239, 231, 0.42);
+}
+
+.form-feedback {
+  min-height: 1.5em;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.form-feedback.success {
+  color: #b9f0c3;
+}
+
+.form-feedback.error {
+  color: #ffb0a4;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero,
+  .analysis-grid,
+  .wedding-sites-section,
+  .contact-section,
+  .services-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 680px;
+  }
+
+  .portrait-card {
+    width: min(100%, 520px);
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header,
+  .header-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .site-header,
+  .hero,
+  .analysis-panel,
+  .services-section,
+  .wedding-sites-section,
+  .timeline-section,
+  .testimonials-section,
+  .contact-section {
+    width: min(calc(100% - 24px), var(--max-width));
+  }
+
+  .hero {
+    gap: 28px;
+    padding-top: 22px;
+  }
+
+  .metric-ribbon,
+  .inquiry-form {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 540px;
+  }
+
+  .logo-card {
+    width: 160px;
+  }
+
+  .profile-card {
+    left: 0;
+    width: 180px;
+  }
+
+  .portrait-card {
+    width: calc(100% - 20px);
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+}
