@@ -1,9 +1,8 @@
-const content = {
+const locales = {
   hu: {
-    metaDescription:
-      "Modern ceremóniamester és egyedi esküvői weboldalak: elegáns, kortárs élmény pároknak és vendégeknek.",
+    metaDescription: "Modern ceremóniamester és egyedi esküvői weboldalak: elegáns, kortárs élmény pároknak és vendégeknek.",
     pageTitle: "Modern Ceremóniamester",
-    copy: {
+    text: {
       skipLink: "Ugrás a tartalomhoz",
       brandMeta: "Ceremóniamester & szertartásvezető",
       navServices: "Szolgáltatások",
@@ -35,16 +34,14 @@ const content = {
     hero: {
       eyebrow: "Ceremóniamester & szertartásvezető",
       title: "Modern jelenlét, nyugodt lebonyolítás, emlékezetes esküvők.",
-      description:
-        "Magyar és angol nyelven vezetett esküvői napok, letisztult kommunikációval, elegáns energiával és opcionális egyedi esküvői weboldallal a teljes élményhez.",
+      description: "Magyar és angol nyelven vezetett esküvői napok, letisztult kommunikációval, elegáns energiával és opcionális egyedi esküvői weboldallal a teljes élményhez.",
       badges: ["HU / EN", "Esküvői weboldalak", "Editorial hangulat"],
       primaryCta: "Ajánlatkérés",
       secondaryCta: "Instagram hangulat"
     },
     analysis: {
       title: "Editorial luxe, nem klasszikus esküvői sablon.",
-      description:
-        "A profil a túldíszített romantika helyett egy visszafogott, kortárs és elegáns világot mutat. A weboldal ezért magazinszerű ritmust, levegős tördelést és erős tipográfiai hierarchiát kapott.",
+      description: "A profil a túldíszített romantika helyett egy visszafogott, kortárs és elegáns világot mutat. A weboldal ezért magazinszerű ritmust, levegős tördelést és erős tipográfiai hierarchiát kapott.",
       points: [
         "Sötétszürke logó és magas kontrasztú serif wordmark",
         "Meleg, aranyórás fotók és esti fények",
@@ -52,74 +49,39 @@ const content = {
         "Fiatalos, mégis prémium ceremóniamesteri jelenlét"
       ]
     },
-    servicesSectionTitle: "Nyugodt kéz a háttérben, karakteres jelenlét a térben.",
+    servicesTitle: "Nyugodt kéz a háttérben, karakteres jelenlét a térben.",
     services: [
-      {
-        title: "Ceremóniamesteri jelenlét",
-        description: "Finoman vezetett nap, feszes ritmus, természetes kapcsolódás a vendégekkel.",
-        accent: "01"
-      },
-      {
-        title: "Kétnyelvű koordináció",
-        description: "Magyar és angol kommunikáció nemzetközi pároknak és vegyes vendégkörnek.",
-        accent: "02"
-      },
-      {
-        title: "Szertartásvezetés",
-        description: "Személyes, kortárs, meghitt ceremónia a sablonosság nélkül.",
-        accent: "03"
-      }
+      ["01", "Ceremóniamesteri jelenlét", "Finoman vezetett nap, feszes ritmus, természetes kapcsolódás a vendégekkel."],
+      ["02", "Kétnyelvű koordináció", "Magyar és angol kommunikáció nemzetközi pároknak és vegyes vendégkörnek."],
+      ["03", "Szertartásvezetés", "Személyes, kortárs, meghitt ceremónia a sablonosság nélkül."]
     ],
-    weddingSites: {
+    websites: {
       title: "Esküvői weboldalak, amik nem mellékszereplők.",
-      description:
-        "Saját mini-site RSVP-vel, idővonallal, dress code információkkal, szállásajánlóval és mobilbarát vendégélménnyel.",
+      description: "Saját mini-site RSVP-vel, idővonallal, dress code információkkal, szállásajánlóval és mobilbarát vendégélménnyel.",
       features: ["RSVP és vendéginformációk", "Program és timeline", "Térkép, szállás, Q&A", "Brandelt, fotóalapú dizájn"]
     },
     preview: {
       date: "Balaton / 2027.06.18",
       rsvp: "67 / 84 válasz",
-      dressCode: "Summer black tie",
+      dresscode: "Summer black tie",
       program: "ceremony / dinner / party / after"
     },
-    timelineHeading: "Letisztult menet, hogy a nagy nap ne adminisztráció legyen.",
+    timelineTitle: "Letisztult menet, hogy a nagy nap ne adminisztráció legyen.",
     timeline: [
-      {
-        title: "Első beszélgetés",
-        description: "Megismerjük az energia- és stílusigényt, nem csak a logisztikát."
-      },
-      {
-        title: "Forgatókönyv és ritmus",
-        description: "Közösen felépítjük a nap dramaturgiáját, hogy minden átmenet természetes maradjon."
-      },
-      {
-        title: "Esküvői weboldal launch",
-        description: "Ha kéritek, elkészül a vendégeknek szóló elegáns, informatív microsite."
-      },
-      {
-        title: "Jelenlét a nagy napon",
-        description: "Nyugodt koordináció, biztos kéz, modern és szerethető hangnem."
-      }
+      ["Első beszélgetés", "Megismerjük az energia- és stílusigényt, nem csak a logisztikát."],
+      ["Forgatókönyv és ritmus", "Közösen felépítjük a nap dramaturgiáját, hogy minden átmenet természetes maradjon."],
+      ["Esküvői weboldal launch", "Ha kéritek, elkészül a vendégeknek szóló elegáns, informatív microsite."],
+      ["Jelenlét a nagy napon", "Nyugodt koordináció, biztos kéz, modern és szerethető hangnem."]
     ],
-    testimonialsHeading: "Az élmény egyszerre marad személyes és professzionális.",
+    testimonialsTitle: "Az élmény egyszerre marad személyes és professzionális.",
     testimonials: [
-      {
-        quote: "Pontosan azt az elegáns, mégis laza hangulatot hozta, amit elképzeltünk.",
-        author: "Dóri & Máté"
-      },
-      {
-        quote: "Az angolul beszélő vendégeink is végig kapcsolódni tudtak a naphoz.",
-        author: "Anna & Chris"
-      },
-      {
-        quote: "A weboldal miatt a vendégeink már az esküvő előtt érezték, hogy ez különleges lesz.",
-        author: "Luca & Peti"
-      }
+      ["Pontosan azt az elegáns, mégis laza hangulatot hozta, amit elképzeltünk.", "Dóri & Máté"],
+      ["Az angolul beszélő vendégeink is végig kapcsolódni tudtak a naphoz.", "Anna & Chris"],
+      ["A weboldal miatt a vendégeink már az esküvő előtt érezték, hogy ez különleges lesz.", "Luca & Peti"]
     ],
     contact: {
-      heading: "Írjátok meg, milyen érzést szeretnétek hagyni a vendégekben.",
-      description:
-        "Ez a verzió GitHub Pages-en is gond nélkül fut. Az ajánlatkérő egy előkészített e-mailt nyit meg, így backend nélkül is használható marad.",
+      title: "Írjátok meg, milyen érzést szeretnétek hagyni a vendégekben.",
+      description: "Ez a verzió GitHub Pages-en is gond nélkül fut. Az ajánlatkérő egy előkészített e-mailt nyit meg, így backend nélkül is használható marad.",
       email: "ceremoniamestered@gmail.com",
       instagram: "@modern_ceremoniamester"
     },
@@ -130,28 +92,22 @@ const content = {
         guests: "90-120 fő",
         message: "Milyen hangulatot, helyszínt és élményt képzeltetek el?"
       },
-      services: [
-        "Csak ceremóniamester",
-        "Szertartásvezetés",
-        "Ceremóniamester + esküvői weboldal",
-        "Teljes csomag"
-      ],
+      services: ["Csak ceremóniamester", "Szertartásvezetés", "Ceremóniamester + esküvői weboldal", "Teljes csomag"],
       submit: "E-mail összeállítása",
       success: "Az e-mail vázlat megnyílt, és az üzenet szövegét a vágólapra is másoltam.",
       error: "Nem sikerült megnyitni az e-mail vázlatot. Az üzenet szövegét a vágólapra másoltam.",
       validation: "Kérlek töltsd ki a kötelező mezőket."
     },
-    imageAlts: {
+    alt: {
       grid: "Esküvői pillanatok és ceremóniamesteri jelenlét.",
       logo: "Modern Ceremóniamester logó.",
       profile: "Modern Ceremóniamester Instagram profilnézet."
     }
   },
   en: {
-    metaDescription:
-      "Modern ceremony hosting and custom wedding websites with an elegant, contemporary guest experience.",
+    metaDescription: "Modern ceremony hosting and custom wedding websites with an elegant, contemporary guest experience.",
     pageTitle: "Modern Ceremony Host",
-    copy: {
+    text: {
       skipLink: "Skip to content",
       brandMeta: "Ceremony host & celebrant",
       navServices: "Services",
@@ -183,16 +139,14 @@ const content = {
     hero: {
       eyebrow: "Ceremony host & celebrant",
       title: "Modern presence, calm execution, memorable weddings.",
-      description:
-        "Wedding hosting in Hungarian and English with clear communication, elegant energy, and optional custom wedding websites to complete the experience.",
+      description: "Wedding hosting in Hungarian and English with clear communication, elegant energy, and optional custom wedding websites to complete the experience.",
       badges: ["HU / EN", "Wedding websites", "Editorial atmosphere"],
       primaryCta: "Request an offer",
       secondaryCta: "Instagram mood"
     },
     analysis: {
       title: "Editorial luxury, not a classic wedding template.",
-      description:
-        "The profile suggests a restrained, contemporary and elegant world instead of overly decorated romance. The website follows that with magazine-like rhythm, generous spacing and strong typographic hierarchy.",
+      description: "The profile suggests a restrained, contemporary and elegant world instead of overly decorated romance. The website follows that with magazine-like rhythm, generous spacing and strong typographic hierarchy.",
       points: [
         "Charcoal logo surface with high-contrast serif branding",
         "Warm golden-hour and evening imagery",
@@ -200,74 +154,39 @@ const content = {
         "Young, premium and composed host presence"
       ]
     },
-    servicesSectionTitle: "A calm hand behind the scenes, a distinct presence in the room.",
+    servicesTitle: "A calm hand behind the scenes, a distinct presence in the room.",
     services: [
-      {
-        title: "Ceremony host presence",
-        description: "A smoothly guided day with strong rhythm and natural connection to guests.",
-        accent: "01"
-      },
-      {
-        title: "Bilingual coordination",
-        description: "Hungarian and English communication for international couples and mixed guest lists.",
-        accent: "02"
-      },
-      {
-        title: "Celebrant service",
-        description: "Personal, contemporary and intimate ceremonies without generic wording.",
-        accent: "03"
-      }
+      ["01", "Ceremony host presence", "A smoothly guided day with strong rhythm and natural connection to guests."],
+      ["02", "Bilingual coordination", "Hungarian and English communication for international couples and mixed guest lists."],
+      ["03", "Celebrant service", "Personal, contemporary and intimate ceremonies without generic wording."]
     ],
-    weddingSites: {
+    websites: {
       title: "Wedding websites that do more than sit on the side.",
-      description:
-        "A custom mini-site with RSVP, timeline, dress code details, accommodation tips and a polished mobile-first guest experience.",
+      description: "A custom mini-site with RSVP, timeline, dress code details, accommodation tips and a polished mobile-first guest experience.",
       features: ["RSVP and guest details", "Program and timeline", "Map, accommodation, Q&A", "Branded photo-led design"]
     },
     preview: {
       date: "Balaton / 18 Jun 2027",
       rsvp: "67 / 84 replies",
-      dressCode: "Summer black tie",
+      dresscode: "Summer black tie",
       program: "ceremony / dinner / party / after"
     },
-    timelineHeading: "A clean process so the wedding day never feels like administration.",
+    timelineTitle: "A clean process so the wedding day never feels like administration.",
     timeline: [
-      {
-        title: "First conversation",
-        description: "We align on energy and style, not just logistics."
-      },
-      {
-        title: "Run of show and rhythm",
-        description: "We shape the flow of the day together so every transition feels natural."
-      },
-      {
-        title: "Wedding website launch",
-        description: "If you want it, your guests get an elegant and informative microsite."
-      },
-      {
-        title: "Presence on the day",
-        description: "Calm coordination, a confident hand and a modern human tone."
-      }
+      ["First conversation", "We align on energy and style, not just logistics."],
+      ["Run of show and rhythm", "We shape the flow of the day together so every transition feels natural."],
+      ["Wedding website launch", "If you want it, your guests get an elegant and informative microsite."],
+      ["Presence on the day", "Calm coordination, a confident hand and a modern human tone."]
     ],
-    testimonialsHeading: "The experience stays both personal and professional.",
+    testimonialsTitle: "The experience stays both personal and professional.",
     testimonials: [
-      {
-        quote: "It brought exactly the elegant yet relaxed mood we imagined.",
-        author: "Dóri & Máté"
-      },
-      {
-        quote: "Our English-speaking guests felt included throughout the entire day.",
-        author: "Anna & Chris"
-      },
-      {
-        quote: "The website made our guests feel the wedding was special before the day even arrived.",
-        author: "Luca & Peti"
-      }
+      ["It brought exactly the elegant yet relaxed mood we imagined.", "Dóri & Máté"],
+      ["Our English-speaking guests felt included throughout the entire day.", "Anna & Chris"],
+      ["The website made our guests feel the wedding was special before the day even arrived.", "Luca & Peti"]
     ],
     contact: {
-      heading: "Tell me what kind of feeling you want your guests to leave with.",
-      description:
-        "This version runs cleanly on GitHub Pages. The inquiry flow opens a prefilled email draft, so it stays usable without a backend.",
+      title: "Tell me what kind of feeling you want your guests to leave with.",
+      description: "This version runs cleanly on GitHub Pages. The inquiry flow opens a prefilled email draft, so it stays usable without a backend.",
       email: "ceremoniamestered@gmail.com",
       instagram: "@modern_ceremoniamester"
     },
@@ -284,7 +203,7 @@ const content = {
       error: "The email draft could not be opened. I copied the message text to your clipboard instead.",
       validation: "Please fill in the required fields."
     },
-    imageAlts: {
+    alt: {
       grid: "Wedding moments and ceremony host presence.",
       logo: "Modern Ceremóniamester logo.",
       profile: "Modern Ceremóniamester Instagram profile view."
@@ -292,285 +211,239 @@ const content = {
   }
 };
 
-const DEFAULT_LOCALE = "hu";
-const STORAGE_KEY = "modern-ceremoniamester-locale";
+const storageKey = "modern-ceremoniamester-locale";
+const defaultLocale = "hu";
 
-function $(id) {
+function byId(id) {
   return document.getElementById(id);
 }
 
-function setCopy(localeContent) {
-  document.querySelectorAll("[data-copy]").forEach((element) => {
-    const key = element.getAttribute("data-copy");
-    const value = localeContent.copy[key];
-    if (value) {
-      element.textContent = value;
+function currentLocaleKey() {
+  const saved = localStorage.getItem(storageKey);
+  return saved && locales[saved] ? saved : defaultLocale;
+}
+
+function renderText(copy) {
+  document.querySelectorAll("[data-text]").forEach((node) => {
+    const key = node.dataset.text;
+    if (copy[key]) {
+      node.textContent = copy[key];
     }
   });
 }
 
-function renderBadges(items) {
-  const row = $("badge-row");
-  row.innerHTML = "";
-  items.forEach((item) => {
-    const badge = document.createElement("span");
-    badge.className = "badge-chip";
-    badge.setAttribute("role", "listitem");
-    badge.textContent = item;
-    row.appendChild(badge);
-  });
-}
-
-function renderList(containerId, items, builder) {
-  const container = $(containerId);
+function fillList(containerId, items, renderer) {
+  const container = byId(containerId);
   container.innerHTML = "";
-  items.forEach((item, index) => container.appendChild(builder(item, index)));
+  items.forEach((item, index) => container.appendChild(renderer(item, index)));
 }
 
-function renderServices(items) {
-  renderList("services-grid", items, (item) => {
-    const article = document.createElement("article");
-    article.className = "service-card";
-    article.setAttribute("data-reveal", "");
-    article.innerHTML = `
-      <span class="service-accent">${item.accent}</span>
-      <h3>${item.title}</h3>
-      <p>${item.description}</p>
-    `;
-    return article;
-  });
-}
+function renderLocale(localeKey) {
+  const locale = locales[localeKey];
+  document.documentElement.lang = localeKey;
+  document.title = locale.pageTitle;
+  byId("meta-description").setAttribute("content", locale.metaDescription);
 
-function renderFeatures(items) {
-  renderList("feature-list", items, (item) => {
+  renderText(locale.text);
+
+  byId("hero-eyebrow").textContent = locale.hero.eyebrow;
+  byId("hero-title").textContent = locale.hero.title;
+  byId("hero-description").textContent = locale.hero.description;
+  byId("hero-primary").textContent = locale.hero.primaryCta;
+  byId("hero-secondary").textContent = locale.hero.secondaryCta;
+
+  fillList("hero-badges", locale.hero.badges, (item) => {
     const span = document.createElement("span");
+    span.setAttribute("role", "listitem");
     span.textContent = item;
     return span;
   });
-}
 
-function renderAnalysis(items) {
-  renderList("analysis-points", items, (item) => {
+  byId("analysis-title").textContent = locale.analysis.title;
+  byId("analysis-description").textContent = locale.analysis.description;
+  fillList("analysis-points", locale.analysis.points, (item) => {
     const li = document.createElement("li");
     li.textContent = item;
     return li;
   });
-}
 
-function renderTimeline(items) {
-  renderList("timeline-list", items, (item, index) => {
+  byId("services-title").textContent = locale.servicesTitle;
+  fillList("services-grid", locale.services, ([accent, title, description]) => {
     const article = document.createElement("article");
-    article.className = "timeline-item";
-    article.setAttribute("data-reveal", "");
-    article.innerHTML = `
-      <span class="timeline-step">${String(index + 1).padStart(2, "0")}</span>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-      </div>
-    `;
+    article.className = "service-card reveal";
+    article.innerHTML = `<span class="service-accent">${accent}</span><h3>${title}</h3><p>${description}</p>`;
     return article;
   });
-}
 
-function renderTestimonials(items) {
-  renderList("testimonials-grid", items, (item) => {
+  byId("websites-title").textContent = locale.websites.title;
+  byId("websites-description").textContent = locale.websites.description;
+  fillList("website-features", locale.websites.features, (item) => {
+    const span = document.createElement("span");
+    span.textContent = item;
+    return span;
+  });
+
+  byId("preview-date").textContent = locale.preview.date;
+  byId("preview-rsvp").textContent = locale.preview.rsvp;
+  byId("preview-dresscode").textContent = locale.preview.dresscode;
+  byId("preview-program").textContent = locale.preview.program;
+
+  byId("timeline-title").textContent = locale.timelineTitle;
+  fillList("timeline-list", locale.timeline, ([title, description], index) => {
+    const article = document.createElement("article");
+    article.className = "reveal";
+    article.innerHTML = `<span class="timeline-step">${String(index + 1).padStart(2, "0")}</span><div><h3>${title}</h3><p>${description}</p></div>`;
+    return article;
+  });
+
+  byId("testimonials-title").textContent = locale.testimonialsTitle;
+  fillList("testimonials-grid", locale.testimonials, ([quote, author]) => {
     const blockquote = document.createElement("blockquote");
     blockquote.className = "testimonial-card";
-    blockquote.innerHTML = `
-      <p>“${item.quote}”</p>
-      <footer>${item.author}</footer>
-    `;
+    blockquote.innerHTML = `<p>“${quote}”</p><footer>${author}</footer>`;
     return blockquote;
   });
-}
 
-function renderServiceOptions(items) {
-  const select = $("service-field");
-  select.innerHTML = "";
-  items.forEach((item, index) => {
+  byId("contact-title").textContent = locale.contact.title;
+  byId("contact-description").textContent = locale.contact.description;
+  byId("contact-email").href = `mailto:${locale.contact.email}`;
+  byId("contact-email").textContent = locale.contact.email;
+  byId("contact-instagram").href = `https://instagram.com/${locale.contact.instagram.replace("@", "")}`;
+  byId("contact-instagram").textContent = locale.contact.instagram;
+
+  byId("image-grid").alt = locale.alt.grid;
+  byId("image-logo").alt = locale.alt.logo;
+  byId("image-profile").alt = locale.alt.profile;
+
+  const form = byId("contact-form");
+  form.elements.namedItem("name").placeholder = locale.form.placeholders.name;
+  form.elements.namedItem("email").placeholder = locale.form.placeholders.email;
+  form.elements.namedItem("guestCount").placeholder = locale.form.placeholders.guests;
+  form.elements.namedItem("message").placeholder = locale.form.placeholders.message;
+  byId("form-submit").textContent = locale.form.submit;
+  byId("form-feedback").textContent = "";
+  byId("form-feedback").className = "form-feedback form-full";
+
+  fillList("service-select", locale.form.services, (item, index) => {
     const option = document.createElement("option");
     option.value = item;
     option.textContent = item;
     if (index === 2) {
       option.selected = true;
     }
-    select.appendChild(option);
+    return option;
   });
+
+  document.querySelectorAll(".locale-button").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.locale === localeKey);
+  });
+
+  observeReveal();
 }
 
-function setupReveal() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+function buildMessage(localeKey, data) {
+  if (localeKey === "hu") {
+    return [
+      `Név: ${data.name}`,
+      `E-mail: ${data.email}`,
+      `Esküvő dátuma: ${data.eventDate || "-"}`,
+      `Szolgáltatás: ${data.service}`,
+      `Várható létszám: ${data.guestCount || "-"}`,
+      "",
+      "Üzenet:",
+      data.message
+    ].join("\n");
+  }
 
-  document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+  return [
+    `Name: ${data.name}`,
+    `Email: ${data.email}`,
+    `Wedding date: ${data.eventDate || "-"}`,
+    `Service: ${data.service}`,
+    `Guest count: ${data.guestCount || "-"}`,
+    "",
+    "Message:",
+    data.message
+  ].join("\n");
 }
 
-function composeMessage(localeContent, formValues) {
-  const lines =
-    localeContent === content.hu
-      ? [
-          `Név: ${formValues.name}`,
-          `E-mail: ${formValues.email}`,
-          `Esküvő dátuma: ${formValues.eventDate || "-"}`,
-          `Szolgáltatás: ${formValues.service}`,
-          `Várható létszám: ${formValues.guestCount || "-"}`,
-          "",
-          "Üzenet:",
-          formValues.message
-        ]
-      : [
-          `Name: ${formValues.name}`,
-          `Email: ${formValues.email}`,
-          `Wedding date: ${formValues.eventDate || "-"}`,
-          `Service: ${formValues.service}`,
-          `Guest count: ${formValues.guestCount || "-"}`,
-          "",
-          "Message:",
-          formValues.message
-        ];
-
-  return lines.join("\n");
-}
-
-async function copyToClipboard(text) {
+async function copyToClipboard(value) {
   try {
-    await navigator.clipboard.writeText(text);
+    await navigator.clipboard.writeText(value);
     return true;
   } catch {
     return false;
   }
 }
 
-function setupForm(getLocale) {
-  const form = $("inquiry-form");
-  const feedback = $("form-feedback");
-  const button = $("submit-button");
+function bindForm() {
+  const form = byId("contact-form");
+  const feedback = byId("form-feedback");
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    const localeKey = currentLocaleKey();
+    const locale = locales[localeKey];
+
     if (!form.reportValidity()) {
-      feedback.className = "form-feedback error";
-      feedback.textContent = getLocale().form.validation;
+      feedback.className = "form-feedback form-full error";
+      feedback.textContent = locale.form.validation;
       return;
     }
 
-    const localeContent = getLocale();
-    const values = Object.fromEntries(new FormData(form).entries());
-    const body = composeMessage(localeContent, values);
-    const subject =
-      localeContent === content.hu
-        ? `Ajánlatkérés - ${values.name}`
-        : `Inquiry request - ${values.name}`;
-    const email = localeContent.contact.email;
-    const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const data = Object.fromEntries(new FormData(form).entries());
+    const body = buildMessage(localeKey, data);
+    const subject = localeKey === "hu" ? `Ajánlatkérés - ${data.name}` : `Inquiry request - ${data.name}`;
+    const mailto = `mailto:${locale.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     const copied = await copyToClipboard(body);
     window.location.href = mailto;
 
-    feedback.className = copied ? "form-feedback success" : "form-feedback error";
-    feedback.textContent = copied ? localeContent.form.success : localeContent.form.error;
+    feedback.className = `form-feedback form-full ${copied ? "success" : "error"}`;
+    feedback.textContent = copied ? locale.form.success : locale.form.error;
+
     form.reset();
-    renderServiceOptions(localeContent.form.services);
-    button.textContent = localeContent.form.submit;
+    renderLocale(localeKey);
   });
 }
 
-function renderLocale(locale) {
-  const localeContent = content[locale];
-  document.documentElement.lang = locale;
-  document.title = localeContent.pageTitle;
-  $("meta-description").setAttribute("content", localeContent.metaDescription);
+let revealObserver;
 
-  setCopy(localeContent);
+function observeReveal() {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+  }
 
-  $("hero-eyebrow").textContent = localeContent.hero.eyebrow;
-  $("hero-title").textContent = localeContent.hero.title;
-  $("hero-description").textContent = localeContent.hero.description;
-  $("hero-primary-cta").textContent = localeContent.hero.primaryCta;
-  $("hero-secondary-cta").textContent = localeContent.hero.secondaryCta;
+  document.querySelectorAll(".reveal").forEach((element) => {
+    element.classList.remove("is-visible");
+    revealObserver.observe(element);
+  });
+}
 
-  $("analysis-title").textContent = localeContent.analysis.title;
-  $("analysis-description").textContent = localeContent.analysis.description;
-  $("services-heading").textContent = localeContent.servicesSectionTitle;
-  $("websites-title").textContent = localeContent.weddingSites.title;
-  $("websites-description").textContent = localeContent.weddingSites.description;
-  $("timeline-heading").textContent = localeContent.timelineHeading;
-  $("testimonials-heading").textContent = localeContent.testimonialsHeading;
-  $("contact-heading").textContent = localeContent.contact.heading;
-  $("contact-description").textContent = localeContent.contact.description;
-
-  $("preview-date").textContent = localeContent.preview.date;
-  $("preview-rsvp").textContent = localeContent.preview.rsvp;
-  $("preview-dresscode").textContent = localeContent.preview.dressCode;
-  $("preview-program").textContent = localeContent.preview.program;
-
-  $("contact-email").href = `mailto:${localeContent.contact.email}`;
-  $("contact-email").textContent = localeContent.contact.email;
-  $("contact-instagram").href = `https://instagram.com/${localeContent.contact.instagram.replace("@", "")}`;
-  $("contact-instagram").textContent = localeContent.contact.instagram;
-
-  $("grid-image").alt = localeContent.imageAlts.grid;
-  $("logo-image").alt = localeContent.imageAlts.logo;
-  $("profile-image").alt = localeContent.imageAlts.profile;
-
-  const form = localeContent.form;
-  setFormPlaceholders(form);
-  renderServiceOptions(form.services);
-  $("submit-button").textContent = form.submit;
-  $("form-feedback").textContent = "";
-  $("form-feedback").className = "form-feedback";
-
-  renderBadges(localeContent.hero.badges);
-  renderAnalysis(localeContent.analysis.points);
-  renderServices(localeContent.services);
-  renderFeatures(localeContent.weddingSites.features);
-  renderTimeline(localeContent.timeline);
-  renderTestimonials(localeContent.testimonials);
-
+function bindLocaleSwitcher() {
   document.querySelectorAll(".locale-button").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.locale === locale);
+    button.addEventListener("click", () => {
+      const localeKey = button.dataset.locale;
+      localStorage.setItem(storageKey, localeKey);
+      renderLocale(localeKey);
+    });
   });
-
-  setupReveal();
-}
-
-function setFormPlaceholders(localeForm) {
-  const form = $("inquiry-form");
-  form.name.placeholder = localeForm.placeholders.name;
-  form.email.placeholder = localeForm.placeholders.email;
-  form.guestCount.placeholder = localeForm.placeholders.guests;
-  form.message.placeholder = localeForm.placeholders.message;
-}
-
-function initLocale() {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  return saved && content[saved] ? saved : DEFAULT_LOCALE;
 }
 
 function init() {
-  let currentLocale = initLocale();
-
-  const getLocale = () => content[currentLocale];
-  setupForm(getLocale);
-  renderLocale(currentLocale);
-
-  document.querySelectorAll(".locale-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      currentLocale = button.dataset.locale;
-      localStorage.setItem(STORAGE_KEY, currentLocale);
-      renderLocale(currentLocale);
-    });
-  });
+  bindLocaleSwitcher();
+  bindForm();
+  renderLocale(currentLocaleKey());
 }
 
 document.addEventListener("DOMContentLoaded", init);

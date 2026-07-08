@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      id="meta-description"
-      name="description"
-      content="Modern ceremóniamester és egyedi esküvői weboldalak: elegáns, kortárs élmény pároknak és vendégeknek."
-    />
+    <meta id="meta-description" name="description" content="Modern ceremóniamester és egyedi esküvői weboldalak." />
     <title>Modern Ceremóniamester</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,205 +14,204 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main" data-copy="skipLink">Ugrás a tartalomhoz</a>
-    <div class="page-shell">
-      <div class="grain"></div>
+    <a class="skip-link" href="#main" data-text="skipLink">Ugrás a tartalomhoz</a>
 
-      <header class="site-header">
-        <div class="brand-lockup">
-          <div class="brand-mark">MC</div>
-          <div>
-            <p class="brand-name">Modern Ceremóniamester</p>
-            <p class="brand-meta" data-copy="brandMeta">Ceremóniamester & szertartásvezető</p>
-          </div>
+    <div class="grain"></div>
+
+    <header class="site-header shell">
+      <a class="brand" href="#main" aria-label="Modern Ceremóniamester">
+        <span class="brand-mark">MC</span>
+        <span class="brand-copy">
+          <strong>Modern Ceremóniamester</strong>
+          <span data-text="brandMeta">Ceremóniamester & szertartásvezető</span>
+        </span>
+      </a>
+
+      <div class="header-controls">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#services" data-text="navServices">Szolgáltatások</a>
+          <a href="#websites" data-text="navWebsites">Esküvői weboldalak</a>
+          <a href="#contact" data-text="navContact">Kapcsolat</a>
+        </nav>
+
+        <div class="locale-switch" aria-label="Language switcher">
+          <button class="locale-button is-active" type="button" data-locale="hu">HU</button>
+          <button class="locale-button" type="button" data-locale="en">EN</button>
         </div>
+      </div>
+    </header>
 
-        <div class="header-actions">
-          <nav class="site-nav" aria-label="Fő navigáció">
-            <a href="#szolgaltatasok" data-copy="navServices">Szolgáltatások</a>
-            <a href="#weboldalak" data-copy="navWebsites">Esküvői weboldalak</a>
-            <a href="#kapcsolat" data-copy="navContact">Kapcsolat</a>
-          </nav>
+    <main id="main">
+      <section class="hero shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" id="hero-eyebrow"></p>
+          <h1 id="hero-title"></h1>
+          <p class="lead" id="hero-description"></p>
 
-          <div class="locale-switch" aria-label="Language switcher">
-            <button class="locale-button is-active" type="button" data-locale="hu">HU</button>
-            <button class="locale-button" type="button" data-locale="en">EN</button>
-          </div>
-        </div>
-      </header>
+          <div class="badge-row" id="hero-badges" role="list" aria-label="Highlights"></div>
 
-      <main id="main">
-        <section class="hero">
-          <div class="hero-copy" data-reveal>
-            <p class="eyebrow" id="hero-eyebrow"></p>
-            <h1 id="hero-title"></h1>
-            <p class="hero-description" id="hero-description"></p>
-
-            <div class="badge-row" id="badge-row" role="list" aria-label="Highlights"></div>
-
-            <div class="hero-actions">
-              <a class="primary-button" href="#kapcsolat" id="hero-primary-cta"></a>
-              <a class="ghost-button" href="#instagram-hangulat" id="hero-secondary-cta"></a>
-            </div>
-
-            <div class="metric-ribbon">
-              <div>
-                <strong>12+</strong>
-                <span data-copy="metricPosts">posztból kiolvasható egységes brandérzet</span>
-              </div>
-              <div>
-                <strong>HU / EN</strong>
-                <span data-copy="metricBilingual">kétnyelvű kommunikáció</span>
-              </div>
-              <div>
-                <strong>1</strong>
-                <span data-copy="metricExperience">összefüggő, modern élmény a vendégeknek</span>
-              </div>
-            </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact" id="hero-primary"></a>
+            <a class="button button-secondary" href="#analysis" id="hero-secondary"></a>
           </div>
 
-          <div class="hero-visual" data-reveal>
-            <article class="floating-card portrait-card">
-              <img src="./images/instagram-grid.jpg" alt="Wedding moments and ceremony host presence." id="grid-image" />
-              <div class="card-overlay">
-                <p data-copy="overlayLabel">Instagram-alapú vizuális elemzés</p>
-                <strong data-copy="overlayTitle">meleg tónusok + elegáns jelenlét</strong>
-              </div>
-            </article>
-
-            <article class="floating-card logo-card">
-              <img src="./images/instagram-logo.jpg" alt="Modern Ceremóniamester logo." id="logo-image" />
-            </article>
-
-            <article class="floating-card profile-card">
-              <img src="./images/instagram-profile.jpg" alt="Modern Ceremóniamester Instagram profile." id="profile-image" />
-            </article>
-          </div>
-        </section>
-
-        <section id="instagram-hangulat" class="analysis-panel" data-reveal>
-          <div class="section-label" data-copy="analysisLabel">Instagram stíluselemzés</div>
-          <div class="analysis-grid">
+          <div class="stats-panel">
             <article>
-              <h2 id="analysis-title"></h2>
-              <p id="analysis-description"></p>
+              <strong>12+</strong>
+              <span data-text="metricPosts">posztból kiolvasható egységes brandérzet</span>
             </article>
-            <ul class="analysis-points" id="analysis-points"></ul>
+            <article>
+              <strong>HU / EN</strong>
+              <span data-text="metricBilingual">kétnyelvű kommunikáció</span>
+            </article>
+            <article>
+              <strong>1</strong>
+              <span data-text="metricExperience">összefüggő, modern élmény a vendégeknek</span>
+            </article>
           </div>
-        </section>
+        </div>
 
-        <section id="szolgaltatasok" class="services-section">
-          <div class="section-heading" data-reveal>
-            <p class="section-label" data-copy="servicesLabel">Mit kap a pár?</p>
-            <h2 id="services-heading"></h2>
+        <div class="hero-visual reveal">
+          <figure class="visual-card visual-main">
+            <img id="image-grid" src="./images/instagram-grid.jpg" alt="" />
+            <figcaption class="glass-caption">
+              <p data-text="overlayLabel">Instagram-alapú vizuális elemzés</p>
+              <strong data-text="overlayTitle">meleg tónusok + elegáns jelenlét</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-card visual-logo">
+            <img id="image-logo" src="./images/instagram-logo.jpg" alt="" />
+          </figure>
+
+          <figure class="visual-card visual-profile">
+            <img id="image-profile" src="./images/instagram-profile.jpg" alt="" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="analysis" class="section shell reveal">
+        <p class="section-kicker" data-text="analysisLabel">Instagram stíluselemzés</p>
+        <div class="analysis-grid panel">
+          <article>
+            <h2 id="analysis-title"></h2>
+            <p id="analysis-description"></p>
+          </article>
+          <ul class="feature-stack" id="analysis-points"></ul>
+        </div>
+      </section>
+
+      <section id="services" class="section shell">
+        <div class="section-head reveal">
+          <p class="section-kicker" data-text="servicesLabel">Mit kap a pár?</p>
+          <h2 id="services-title"></h2>
+        </div>
+        <div class="card-grid" id="services-grid"></div>
+      </section>
+
+      <section id="websites" class="section shell websites-layout">
+        <div class="reveal">
+          <p class="section-kicker" data-text="websitesLabel">Extra szolgáltatás</p>
+          <h2 id="websites-title"></h2>
+          <p class="lead-small" id="websites-description"></p>
+          <div class="badge-row" id="website-features"></div>
+        </div>
+
+        <div class="browser-card reveal">
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-          <div class="services-grid" id="services-grid"></div>
-        </section>
+          <div class="browser-grid">
+            <article class="browser-panel browser-panel-large">
+              <p data-text="previewLabel">Esküvői microsite</p>
+              <strong id="preview-date"></strong>
+            </article>
+            <article class="browser-panel">
+              <p>RSVP</p>
+              <strong id="preview-rsvp"></strong>
+            </article>
+            <article class="browser-panel">
+              <p data-text="previewDressCode">Dress code</p>
+              <strong id="preview-dresscode"></strong>
+            </article>
+            <article class="browser-panel browser-panel-wide">
+              <p data-text="previewProgram">Program</p>
+              <strong id="preview-program"></strong>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <section id="weboldalak" class="wedding-sites-section">
-          <div class="wedding-sites-copy" data-reveal>
-            <p class="section-label" data-copy="websitesLabel">Extra szolgáltatás</p>
-            <h2 id="websites-title"></h2>
-            <p id="websites-description"></p>
-            <div class="feature-list" id="feature-list"></div>
+      <section class="section shell">
+        <div class="section-head reveal">
+          <p class="section-kicker" data-text="timelineLabel">Folyamat</p>
+          <h2 id="timeline-title"></h2>
+        </div>
+        <div class="timeline" id="timeline-list"></div>
+      </section>
+
+      <section class="section shell reveal">
+        <div class="section-head">
+          <p class="section-kicker" data-text="testimonialsLabel">Visszajelzések hangulata</p>
+          <h2 id="testimonials-title"></h2>
+        </div>
+        <div class="card-grid testimonials-grid" id="testimonials-grid"></div>
+      </section>
+
+      <section id="contact" class="section shell contact-layout">
+        <div class="reveal">
+          <p class="section-kicker" data-text="contactLabel">Kapcsolat</p>
+          <h2 id="contact-title"></h2>
+          <p class="lead-small" id="contact-description"></p>
+
+          <div class="contact-links">
+            <a id="contact-email" href="#"></a>
+            <a id="contact-instagram" href="#" target="_blank" rel="noreferrer"></a>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <div class="note-box">
+            <strong data-text="formNoteTitle">GitHub Pages-kompatibilis kapcsolatfelvétel</strong>
+            <p data-text="formNoteBody">
+              Az űrlap a böngésződben egy előre kitöltött e-mailt állít össze, és a szöveget a vágólapra is másolja.
+            </p>
           </div>
 
-          <div class="wedding-sites-preview" data-reveal>
-            <div class="browser-chrome">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="preview-content">
-              <div class="preview-panel primary">
-                <p data-copy="previewLabel">Wedding microsite</p>
-                <strong id="preview-date"></strong>
-              </div>
-              <div class="preview-panel">
-                <p>RSVP</p>
-                <strong id="preview-rsvp"></strong>
-              </div>
-              <div class="preview-panel">
-                <p data-copy="previewDressCode">Dress code</p>
-                <strong id="preview-dresscode"></strong>
-              </div>
-              <div class="preview-panel wide">
-                <p data-copy="previewProgram">Program</p>
-                <strong id="preview-program"></strong>
-              </div>
-            </div>
-          </div>
-        </section>
+          <form id="contact-form" class="contact-form">
+            <label>
+              <span data-text="fieldName">Név</span>
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              <span data-text="fieldEmail">E-mail</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span data-text="fieldDate">Esküvő dátuma</span>
+              <input type="date" name="eventDate" />
+            </label>
+            <label>
+              <span data-text="fieldService">Szolgáltatás</span>
+              <select name="service" id="service-select"></select>
+            </label>
+            <label>
+              <span data-text="fieldGuests">Várható létszám</span>
+              <input type="text" name="guestCount" />
+            </label>
+            <label class="form-full">
+              <span data-text="fieldMessage">Rövid üzenet</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
 
-        <section class="timeline-section">
-          <div class="section-heading" data-reveal>
-            <p class="section-label" data-copy="timelineLabel">Folyamat</p>
-            <h2 id="timeline-heading"></h2>
-          </div>
-          <div class="timeline-list" id="timeline-list"></div>
-        </section>
-
-        <section class="testimonials-section" data-reveal>
-          <div class="section-heading">
-            <p class="section-label" data-copy="testimonialsLabel">Visszajelzések hangulata</p>
-            <h2 id="testimonials-heading"></h2>
-          </div>
-          <div class="testimonials-grid" id="testimonials-grid"></div>
-        </section>
-
-        <section id="kapcsolat" class="contact-section">
-          <div class="contact-copy" data-reveal>
-            <p class="section-label" data-copy="contactLabel">Kapcsolat</p>
-            <h2 id="contact-heading"></h2>
-            <p id="contact-description"></p>
-
-            <div class="contact-meta">
-              <a id="contact-email" href="#"></a>
-              <a id="contact-instagram" href="#" target="_blank" rel="noreferrer"></a>
-            </div>
-          </div>
-
-          <div class="contact-form-shell" data-reveal>
-            <div class="contact-note">
-              <strong data-copy="formNoteTitle">GitHub Pages-kompatibilis kapcsolatfelvétel</strong>
-              <p data-copy="formNoteBody">
-                Az űrlap a böngésződben egy előre kitöltött e-mailt állít össze, és a szöveget a vágólapra is másolja.
-              </p>
-            </div>
-
-            <form class="inquiry-form" id="inquiry-form">
-              <label>
-                <span data-copy="fieldName">Név</span>
-                <input required type="text" name="name" />
-              </label>
-              <label>
-                <span data-copy="fieldEmail">E-mail</span>
-                <input required type="email" name="email" />
-              </label>
-              <label>
-                <span data-copy="fieldDate">Esküvő dátuma</span>
-                <input type="date" name="eventDate" />
-              </label>
-              <label>
-                <span data-copy="fieldService">Szolgáltatás</span>
-                <select name="service" id="service-field"></select>
-              </label>
-              <label>
-                <span data-copy="fieldGuests">Várható létszám</span>
-                <input type="text" name="guestCount" />
-              </label>
-              <label class="full-width">
-                <span data-copy="fieldMessage">Rövid üzenet</span>
-                <textarea required rows="5" name="message"></textarea>
-              </label>
-
-              <button class="primary-button full-width" id="submit-button" type="submit"></button>
-              <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
-            </form>
-          </div>
-        </section>
-      </main>
-    </div>
+            <button class="button button-primary form-full" id="form-submit" type="submit"></button>
+            <p class="form-feedback form-full" id="form-feedback" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
 
     <script src="./app.js" defer></script>
   </body>

@@ -1,14 +1,18 @@
 :root {
-  --bg: #141310;
-  --line: rgba(255, 248, 238, 0.16);
+  --bg: #13110f;
+  --bg-soft: rgba(255, 248, 238, 0.05);
+  --panel: rgba(255, 248, 238, 0.06);
+  --line: rgba(255, 248, 238, 0.14);
   --text: #f6efe7;
+  --muted: rgba(246, 239, 231, 0.76);
   --accent: #d6ae7b;
   --accent-strong: #e9c89e;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
   --radius-xl: 32px;
   --radius-lg: 24px;
-  --radius-sm: 999px;
-  --max-width: 1240px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --shell: 1240px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -23,11 +27,11 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(214, 174, 123, 0.18), transparent 28%),
     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 22%),
     linear-gradient(135deg, #11100d 0%, #171612 45%, #100f0d 100%);
-  color: var(--text);
   font-family: "Manrope", sans-serif;
 }
 
@@ -48,24 +52,24 @@ select {
   font: inherit;
 }
 
+.shell {
+  width: min(calc(100% - 40px), var(--shell));
+  margin: 0 auto;
+}
+
 .skip-link {
   position: absolute;
-  left: 16px;
   top: -48px;
-  z-index: 30;
+  left: 16px;
+  z-index: 100;
   padding: 12px 16px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--text);
-  color: #141310;
+  color: var(--bg);
 }
 
 .skip-link:focus {
   top: 16px;
-}
-
-.page-shell {
-  position: relative;
-  overflow: clip;
 }
 
 .grain {
@@ -73,29 +77,11 @@ select {
   inset: 0;
   pointer-events: none;
   opacity: 0.35;
+  mix-blend-mode: soft-light;
   background:
     radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.08), transparent 18%),
     radial-gradient(circle at 90% 10%, rgba(214, 174, 123, 0.1), transparent 24%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.025),
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-  mix-blend-mode: soft-light;
-}
-
-.site-header,
-.hero,
-.analysis-panel,
-.services-section,
-.wedding-sites-section,
-.timeline-section,
-.testimonials-section,
-.contact-section {
-  width: min(calc(100% - 40px), var(--max-width));
-  margin: 0 auto;
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 3px);
 }
 
 .site-header {
@@ -105,20 +91,20 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
   padding: 24px 0 18px;
   backdrop-filter: blur(18px);
 }
 
-.brand-lockup,
-.header-actions {
+.brand,
+.header-controls,
+.site-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-.header-actions {
-  gap: 22px;
+.brand {
+  gap: 16px;
 }
 
 .brand-mark {
@@ -130,48 +116,45 @@ select {
   border-radius: 50%;
   background: rgba(91, 91, 86, 0.62);
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.9rem;
+  font-size: 1.95rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
 }
 
-.brand-name,
-.brand-meta,
+.brand-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.brand-copy strong,
+.brand-copy span,
 .eyebrow,
-.section-label,
-.service-accent,
-.timeline-step,
-.preview-panel p,
-.metric-ribbon span {
+.section-kicker,
+.stats-panel span,
+.timeline-step {
   text-transform: uppercase;
   letter-spacing: 0.16em;
 }
 
-.brand-name,
-.brand-meta {
-  margin: 0;
-}
-
-.brand-name {
+.brand-copy strong {
   font-size: 0.82rem;
-  font-weight: 700;
 }
 
-.brand-meta {
-  margin-top: 4px;
+.brand-copy span {
   color: rgba(246, 239, 231, 0.68);
   font-size: 0.68rem;
 }
 
+.header-controls {
+  gap: 22px;
+}
+
 .site-nav {
-  display: flex;
   gap: 22px;
   font-size: 0.92rem;
   color: rgba(246, 239, 231, 0.84);
 }
 
-.site-nav a,
-.locale-button {
+.site-nav a {
   position: relative;
 }
 
@@ -185,7 +168,7 @@ select {
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 260ms var(--ease);
+  transition: transform 220ms var(--ease);
 }
 
 .site-nav a:hover::after,
@@ -197,19 +180,19 @@ select {
   display: inline-flex;
   padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 248, 238, 0.05);
+  border-radius: var(--radius-pill);
+  background: var(--bg-soft);
 }
 
 .locale-button {
   min-width: 50px;
   padding: 10px 14px;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: transparent;
   color: rgba(246, 239, 231, 0.82);
   cursor: pointer;
-  transition: background-color 220ms var(--ease), color 220ms var(--ease), transform 220ms var(--ease);
+  transition: transform 220ms var(--ease), background-color 220ms var(--ease), color 220ms var(--ease);
 }
 
 .locale-button.is-active {
@@ -218,79 +201,85 @@ select {
   font-weight: 800;
 }
 
-.hero {
+.hero,
+.websites-layout,
+.contact-layout {
   display: grid;
-  grid-template-columns: 1.06fr 0.94fr;
-  gap: 44px;
-  padding: 52px 0 40px;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 40px;
   align-items: center;
 }
 
-.hero-copy h1,
+.hero {
+  padding: 52px 0 24px;
+}
+
+.hero h1,
+.section-head h2,
 .analysis-grid h2,
-.section-heading h2,
-.wedding-sites-copy h2,
-.contact-copy h2 {
+.websites-layout h2,
+.contact-layout h2 {
+  margin: 0;
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   line-height: 0.92;
   letter-spacing: -0.03em;
 }
 
+.hero h1 {
+  font-size: clamp(3.6rem, 8vw, 7.2rem);
+  max-width: 10ch;
+}
+
+.section-head h2,
+.analysis-grid h2,
+.websites-layout h2,
+.contact-layout h2 {
+  font-size: clamp(2.6rem, 5vw, 4.7rem);
+}
+
 .eyebrow,
-.section-label {
+.section-kicker {
   margin: 0 0 18px;
   color: var(--accent);
   font-size: 0.73rem;
   font-weight: 700;
 }
 
-.hero-copy h1 {
-  margin: 0;
-  font-size: clamp(3.8rem, 8vw, 7.2rem);
-  max-width: 10ch;
-}
-
-.hero-description,
+.lead,
+.lead-small,
 .analysis-grid p,
+.feature-stack li,
 .service-card p,
-.wedding-sites-copy p,
-.timeline-item p,
+.timeline article p,
 .testimonial-card p,
-.contact-copy p,
-.contact-note p {
-  color: rgba(246, 239, 231, 0.78);
+.contact-links a,
+.note-box p {
+  color: var(--muted);
   line-height: 1.7;
-  font-size: 1rem;
 }
 
-.hero-description {
-  max-width: 60ch;
+.lead {
   margin: 24px 0 0;
+  max-width: 60ch;
   font-size: 1.08rem;
 }
 
-.badge-row,
-.feature-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.lead-small {
+  margin: 20px 0 0;
 }
 
 .badge-row {
-  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.badge-chip,
-.ghost-button,
-.primary-button,
-.feature-list span {
-  border-radius: var(--radius-sm);
-}
-
-.badge-chip {
+.badge-row span {
   padding: 10px 14px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
   background: rgba(255, 248, 238, 0.04);
   font-size: 0.82rem;
 }
@@ -301,63 +290,66 @@ select {
   margin-top: 28px;
 }
 
-.primary-button,
-.ghost-button {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 52px;
   padding: 0 20px;
   border: 1px solid transparent;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition:
-    transform 220ms var(--ease),
-    border-color 220ms var(--ease),
-    background-color 220ms var(--ease),
-    box-shadow 220ms var(--ease);
+  transition: transform 220ms var(--ease), border-color 220ms var(--ease), background-color 220ms var(--ease);
 }
 
-.primary-button {
+.button:hover,
+.button:focus-visible,
+.locale-button:hover,
+.locale-button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button-primary {
   background: linear-gradient(135deg, var(--accent-strong), #c89d69);
   color: #191611;
   font-weight: 800;
   box-shadow: 0 12px 30px rgba(201, 153, 96, 0.26);
 }
 
-.ghost-button {
-  border-color: var(--line);
+.button-secondary {
   background: rgba(255, 248, 238, 0.04);
+  border-color: var(--line);
 }
 
-.primary-button:hover,
-.ghost-button:hover,
-.primary-button:focus-visible,
-.ghost-button:focus-visible,
-.locale-button:hover,
-.locale-button:focus-visible {
-  transform: translateY(-2px);
+.stats-panel,
+.panel,
+.visual-card,
+.service-card,
+.testimonial-card,
+.browser-card,
+.timeline article {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
 }
 
-.metric-ribbon {
+.stats-panel {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-top: 40px;
   padding: 20px;
-  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: rgba(255, 248, 238, 0.05);
-  box-shadow: var(--shadow);
 }
 
-.metric-ribbon strong {
+.stats-panel strong {
   display: block;
   margin-bottom: 10px;
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
 }
 
-.metric-ribbon span {
+.stats-panel span {
   display: block;
   color: rgba(246, 239, 231, 0.68);
   font-size: 0.68rem;
@@ -369,79 +361,70 @@ select {
   min-height: 760px;
 }
 
-.floating-card {
+.visual-card {
   position: absolute;
   overflow: hidden;
-  border: 1px solid rgba(255, 248, 238, 0.12);
   border-radius: 30px;
-  background: rgba(255, 248, 238, 0.06);
-  box-shadow: var(--shadow);
 }
 
-.portrait-card {
+.visual-main {
   top: 40px;
   right: 0;
   width: min(100%, 470px);
 }
 
-.portrait-card img {
+.visual-main img {
   aspect-ratio: 0.72;
   object-fit: cover;
 }
 
-.card-overlay {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  padding: 16px;
-  border: 1px solid rgba(255, 248, 238, 0.16);
-  border-radius: 22px;
-  backdrop-filter: blur(16px);
-  background: rgba(20, 19, 16, 0.46);
-}
-
-.card-overlay p,
-.card-overlay strong {
-  margin: 0;
-}
-
-.card-overlay p {
-  color: rgba(246, 239, 231, 0.66);
-  font-size: 0.82rem;
-}
-
-.card-overlay strong {
-  display: block;
-  margin-top: 8px;
-  font-size: 1rem;
-}
-
-.logo-card {
-  left: 0;
+.visual-logo {
   top: 0;
+  left: 0;
   width: 230px;
   transform: rotate(-8deg);
 }
 
-.profile-card {
-  left: 32px;
+.visual-profile {
   bottom: 0;
+  left: 32px;
   width: 240px;
   transform: rotate(7deg);
 }
 
-.analysis-panel,
-.services-section,
-.wedding-sites-section,
-.timeline-section,
-.testimonials-section,
-.contact-section {
-  padding: 92px 0 0;
+.glass-caption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  padding: 16px;
+  border: 1px solid rgba(255, 248, 238, 0.16);
+  border-radius: 22px;
+  background: rgba(20, 19, 16, 0.46);
+  backdrop-filter: blur(16px);
 }
 
-.analysis-panel {
-  padding-top: 40px;
+.glass-caption p,
+.glass-caption strong {
+  margin: 0;
+}
+
+.glass-caption p {
+  color: rgba(246, 239, 231, 0.66);
+  font-size: 0.82rem;
+}
+
+.glass-caption strong {
+  display: block;
+  margin-top: 8px;
+}
+
+.section {
+  padding-top: 92px;
+}
+
+.section-head {
+  max-width: 760px;
 }
 
 .analysis-grid {
@@ -449,22 +432,10 @@ select {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 30px;
   padding: 30px;
-  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  background:
-    linear-gradient(180deg, rgba(255, 248, 238, 0.07), rgba(255, 248, 238, 0.03)),
-    rgba(255, 248, 238, 0.04);
 }
 
-.analysis-grid h2,
-.section-heading h2,
-.wedding-sites-copy h2,
-.contact-copy h2 {
-  margin: 0;
-  font-size: clamp(2.6rem, 5vw, 4.7rem);
-}
-
-.analysis-points {
+.feature-stack {
   display: grid;
   gap: 14px;
   margin: 0;
@@ -472,19 +443,14 @@ select {
   list-style: none;
 }
 
-.analysis-points li {
+.feature-stack li {
   padding: 16px 18px;
   border: 1px solid rgba(255, 248, 238, 0.1);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 248, 238, 0.04);
 }
 
-.section-heading {
-  max-width: 760px;
-}
-
-.services-grid,
-.testimonials-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
@@ -492,96 +458,69 @@ select {
 }
 
 .service-card,
-.testimonial-card,
-.contact-form-shell {
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: rgba(255, 248, 238, 0.05);
-  box-shadow: var(--shadow);
-}
-
-.service-card {
-  min-height: 260px;
+.testimonial-card {
   padding: 28px;
+  border-radius: 28px;
 }
 
-.service-accent {
-  display: inline-block;
+.service-card h3,
+.timeline article h3 {
+  margin: 18px 0 12px;
+  font-size: 1.5rem;
+}
+
+.service-accent,
+.timeline-step {
   color: var(--accent);
   font-size: 0.72rem;
   font-weight: 800;
 }
 
-.service-card h3,
-.timeline-item h3 {
-  margin: 18px 0 12px;
-  font-size: 1.5rem;
-}
-
-.wedding-sites-section {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 34px;
-  align-items: center;
-}
-
-.feature-list {
-  margin-top: 28px;
-}
-
-.feature-list span {
-  padding: 12px 16px;
-  background: rgba(255, 248, 238, 0.07);
-  border: 1px solid var(--line);
-}
-
-.wedding-sites-preview {
+.browser-card {
   padding: 24px;
-  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, rgba(91, 91, 86, 0.32), rgba(20, 19, 16, 0.82));
-  box-shadow: var(--shadow);
 }
 
-.browser-chrome {
+.browser-dots {
   display: flex;
   gap: 8px;
 }
 
-.browser-chrome span {
+.browser-dots span {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: rgba(255, 248, 238, 0.22);
 }
 
-.preview-content {
+.browser-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-top: 22px;
 }
 
-.preview-panel {
+.browser-panel {
   min-height: 140px;
   padding: 20px;
+  border: 1px solid rgba(255, 248, 238, 0.11);
   border-radius: 22px;
   background:
     radial-gradient(circle at top right, rgba(214, 174, 123, 0.22), transparent 34%),
     rgba(255, 248, 238, 0.06);
-  border: 1px solid rgba(255, 248, 238, 0.11);
 }
 
-.preview-panel.primary,
-.preview-panel.wide {
+.browser-panel-large,
+.browser-panel-wide {
   grid-column: span 2;
 }
 
-.preview-panel.primary {
+.browser-panel-large {
   min-height: 210px;
 }
 
-.preview-panel strong {
+.browser-panel strong {
   display: block;
   max-width: 12ch;
   margin-top: 16px;
@@ -590,40 +529,27 @@ select {
   line-height: 0.98;
 }
 
-.timeline-list {
+.timeline {
   display: grid;
   gap: 18px;
   margin-top: 30px;
 }
 
-.timeline-item {
+.timeline article {
   display: grid;
   grid-template-columns: 104px 1fr;
   gap: 20px;
   padding: 22px 24px;
-  border: 1px solid rgba(255, 248, 238, 0.1);
-  border-radius: 24px;
-  background: rgba(255, 248, 238, 0.04);
+  border-radius: var(--radius-lg);
 }
 
-.timeline-step {
-  color: var(--accent);
-  font-weight: 800;
-  font-size: 0.8rem;
-}
-
-.timeline-item h3,
-.timeline-item p {
+.timeline article h3,
+.timeline article p {
   margin: 0;
 }
 
-.timeline-item p {
+.timeline article p {
   margin-top: 8px;
-}
-
-.testimonial-card {
-  margin: 0;
-  padding: 28px;
 }
 
 .testimonial-card footer {
@@ -632,30 +558,23 @@ select {
   font-weight: 700;
 }
 
-.contact-section {
+.contact-links {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 30px;
-  padding-bottom: 80px;
-}
-
-.contact-meta {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
   margin-top: 28px;
 }
 
-.contact-meta a {
+.contact-links a {
   width: fit-content;
   color: var(--accent-strong);
 }
 
-.contact-form-shell {
+.panel {
   padding: 24px;
+  border-radius: 28px;
 }
 
-.contact-note {
+.note-box {
   margin-bottom: 18px;
   padding: 18px;
   border: 1px solid rgba(255, 248, 238, 0.1);
@@ -663,45 +582,45 @@ select {
   background: rgba(255, 248, 238, 0.04);
 }
 
-.contact-note strong {
+.note-box strong {
   display: block;
   margin-bottom: 10px;
 }
 
-.contact-note p {
+.note-box p {
   margin: 0;
 }
 
-.inquiry-form {
+.contact-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
-.inquiry-form label {
+.contact-form label {
   display: grid;
   gap: 8px;
   color: rgba(246, 239, 231, 0.76);
   font-size: 0.92rem;
 }
 
-.full-width {
+.form-full {
   grid-column: 1 / -1;
 }
 
-.inquiry-form input,
-.inquiry-form textarea,
-.inquiry-form select {
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   padding: 14px 16px;
+  color: var(--text);
   border: 1px solid rgba(255, 248, 238, 0.12);
   border-radius: 16px;
   background: rgba(255, 248, 238, 0.05);
-  color: var(--text);
 }
 
-.inquiry-form input::placeholder,
-.inquiry-form textarea::placeholder {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
   color: rgba(246, 239, 231, 0.42);
 }
 
@@ -719,13 +638,13 @@ select {
   color: #ffb0a4;
 }
 
-[data-reveal] {
+.reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
-[data-reveal].is-visible {
+.reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -738,11 +657,11 @@ select {
   *,
   *::before,
   *::after {
-    animation: none !important;
     transition: none !important;
+    animation: none !important;
   }
 
-  [data-reveal] {
+  .reveal {
     opacity: 1;
     transform: none;
   }
@@ -750,46 +669,34 @@ select {
 
 @media (max-width: 1080px) {
   .hero,
+  .websites-layout,
+  .contact-layout,
   .analysis-grid,
-  .wedding-sites-section,
-  .contact-section,
-  .services-grid,
-  .testimonials-grid {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-visual {
     min-height: 680px;
   }
-
-  .portrait-card {
-    width: min(100%, 520px);
-  }
 }
 
 @media (max-width: 860px) {
   .site-header,
-  .header-actions {
+  .header-controls {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 
 @media (max-width: 760px) {
+  .shell {
+    width: min(calc(100% - 24px), var(--shell));
+  }
+
   .site-nav {
     flex-wrap: wrap;
     gap: 14px;
-  }
-
-  .site-header,
-  .hero,
-  .analysis-panel,
-  .services-section,
-  .wedding-sites-section,
-  .timeline-section,
-  .testimonials-section,
-  .contact-section {
-    width: min(calc(100% - 24px), var(--max-width));
   }
 
   .hero {
@@ -797,8 +704,10 @@ select {
     padding-top: 22px;
   }
 
-  .metric-ribbon,
-  .inquiry-form {
+  .stats-panel,
+  .contact-form,
+  .browser-grid,
+  .timeline article {
     grid-template-columns: 1fr;
   }
 
@@ -806,20 +715,16 @@ select {
     min-height: 540px;
   }
 
-  .logo-card {
+  .visual-logo {
     width: 160px;
   }
 
-  .profile-card {
+  .visual-profile {
     left: 0;
     width: 180px;
   }
 
-  .portrait-card {
+  .visual-main {
     width: calc(100% - 20px);
-  }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
   }
 }
